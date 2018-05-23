@@ -42,3 +42,34 @@ def countVowel(str)
   puts "Your sentence has #{output} vowels"
 end
 puts countVowel("How many vowels are there in this string?")
+
+# prime number checker
+def prime
+  puts "Enter a number to see if it is prime"
+  input = gets.strip.to_i
+  answer = 0
+  (2...input).each { |i| input % i == 0 ? break : answer = 1 }
+  if answer == 1 
+    puts "It is a prime number"
+  else
+    puts "Not a prime number"
+  end
+end
+prime 
+
+# array second highest and lowest
+arr = [12,23,34,54,65,98,78,56,45]
+
+def highLow(arr)
+  sorted = arr.sort
+  puts "Second highest is #{sorted[-2]}, the second lowest is #{sorted[1]}"
+end
+highLow(arr)
+
+#factorial
+def factorIt(num)
+  factors = []
+  (1..num).each { |i| num % i == 0 ? factors << i : factors } 
+  puts factors.join(", ")
+end
+factorIt(12)
