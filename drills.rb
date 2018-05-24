@@ -73,3 +73,42 @@ def factorIt(num)
   puts factors.join(", ")
 end
 factorIt(12)
+
+# take a number and put it into coins
+def toCoins(number)
+  coin = []
+
+  quarters = (number/25).to_i
+  coin << quarters
+  number = number - (quarters * 25)
+  
+  dimes = (number/10).to_i
+  coin << dimes
+  number = number - (dimes * 10)
+
+  nickels = (number/5).to_i
+  coin << nickels
+  number = number - (nickels * 5)
+
+  coin << number
+
+  puts coin 
+  binding.pry
+end
+puts toCoins(96)
+
+# extract uniq characters
+def characters(str)
+  arr = str.split("").uniq
+  puts arr.length
+end
+puts characters("how many unique characters are in this phrase?")
+
+# count number of occurences with each letter
+def countLetter(str)
+  hsh = Hash.new 0
+  new = str.gsub(" ","").split("").sort
+  new.each do |x| hsh[x] += 1
+  end
+end
+countLetter("how many mulitple letters are there here?")
