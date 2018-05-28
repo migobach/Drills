@@ -151,7 +151,7 @@ console.log(countVow("There are so many vowels and so little time."))
 //prime number tester
 function prime(num) {
   if (num < 2) return false
-  for(var x = 2; x < num; x++){
+  for (var x = 2; x < num; x++){
     if(num%x===0)
       return false;
   }
@@ -240,7 +240,7 @@ function howMany(str) {
 console.log(howMany("How many occurences of some letters are there?"))
 
 
-//function that returns array elements larger than a number
+// //function that returns array elements larger than a number
 var arr = [54,56,67,78,90,12,23,34,45]
 var higherArr = []
 
@@ -257,3 +257,53 @@ function check(x) {
   return x > 50
 }
 console.log(arr.filter(check))
+
+// larger than a number test
+function larger(i) {
+  arr = [12,23,34,45,56,67,78,89,90]
+  arrLarge = []
+  arr.forEach(function(x){
+    higherThan = (x > i) ? arrLarge.push(x) : false;
+  })
+  
+  return higherThan
+}
+console.log(larger(70))
+
+// return a subset of numbers from an array
+function subset(str) {
+  var combos = 0 
+  if combos === str.length {
+    (combos..str.length - 1).forEach(switch)
+    str[combos], str[switch] = str[switch], str[combos]
+  }
+}
+combo(‘hello’)
+
+
+// first uniq letter in a string - not working. 
+// function firstUni(str) {
+//   var first = []
+//   var arr = str.split("").sort()
+//   for (x=0, a = arr.length; x < a; x++){
+//     (arr[x] != arr[x+1] && arr[x] != arr[x-1]) ? first.push(arr[x]) : false;
+//   }
+//   debugger
+// }
+
+// console.log(firstUni("abdedefgghbacc"))
+
+// input arr of stings, output longest
+function longest(arr){
+  longest = arr[0].length
+  toReturn = arr[0]
+  for(var i = 0; i < arr.length; i++){
+    if (arr[i].length > longest){
+      toReturn = arr[i]
+      longest = toReturn.length
+    }
+  }
+  return toReturn
+}
+console.log(longest(['Australia', 'Canada', 'Cuba', 'United States of America']))
+
